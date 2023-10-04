@@ -10,7 +10,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "prepare": "husky install",
-    "chromatic": "npx chromatic --project-token=chpt_81f5f3de892f895"
+    "chromatic": "npx chromatic --exit-zero-on-changes"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown",

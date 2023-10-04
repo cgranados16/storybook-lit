@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "chromatic": "npx chromatic --project-token=chpt_81f5f3de892f895"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown",
@@ -27,6 +28,7 @@
     "@storybook/web-components-vite": "^7.4.6",
     "@typescript-eslint/eslint-plugin": "^6.7.4",
     "@typescript-eslint/parser": "^6.7.4",
+    "chromatic": "^7.2.0",
     "eslint": "^8.50.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-lit": "^1.9.1",
@@ -38,5 +40,7 @@
     "storybook": "^7.4.6",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "storybook-lit@0.0.0"
 }

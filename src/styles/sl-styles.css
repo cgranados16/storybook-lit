@@ -1,0 +1,49 @@
+:not(:defined) {
+  visibility: hidden;
+}
+
+:root,
+:host,
+.sl-theme-light {
+  color-scheme: light;
+
+  --sl-font-sans: "Lato", -apple-system, BlinkMacSystemFont, ‘Segoe UI’, Roboto,
+    Helvetica, Arial, sans-serif, ‘Apple Color Emoji’, ‘Segoe UI Emoji’,
+    ‘Segoe UI Symbol’;
+
+  --sl-shadow-x-large: 0 8px 24px rgba(0, 0, 0, 0.2);
+
+  --primary-main: hsla(10, 100%, 57%, 1);
+  --primary-dark: hsla(10, 88%, 53%, 1);
+  /* --primary-light: #4dabf7; */
+  --primary-contrast: hsla(0, 0%, 100%, 1);
+  --primary-states-hover: hsla(10, 100%, 57%, 0.04);
+  /* --primary-states-selected: #0056b3; */
+  /* --primary-states-focus: #007bff; */
+  /* --primary-states-focus-visible: rgba(0, 123, 255, 0.6); */
+  --primary-states-outlined-border: hsla(10, 100%, 57%, 0.5);
+
+  --primary-black-main: hsla(0, 0%, 13%, 1);
+  --primary-black-dark: hsla(0, 0%, 26%, 1);
+  --primary-black-contrast: hsla(0, 0%, 100%, 1);
+  --primary-black-states-hover: hsla(0, 0%, 13%, 0.04);
+  --primary-black-states-outlined-border: hsla(0, 0%, 13%, 0.5);
+
+  --secondary-main: hsla(275, 56%, 48%, 1);
+  --secondary-dark: hsla(263, 59%, 43%, 1);
+  --secondary-contrast: hsla(0, 0%, 100%, 1);
+  --secondary-states-hover: hsla(275, 56%, 48%, 0.04);
+  --secondary-states-outlined-border: hsla(275, 56%, 48%, 0.5);
+
+  --error-main: hsla(0, 65%, 51%, 1);
+  --error-dark: hsla(0, 66%, 47%, 1);
+  --error-contrast: hsla(0, 0%, 100%, 1);
+  --error-states-hover: hsla(0, 65%, 51%, 0.04);
+  --error-states-outlined-border: hsla(0, 65%, 51%, 0.5);
+
+  --success-main: hsla(123, 43%, 39%, 1);
+  --success-dark: hsla(124, 55%, 24%, 1);
+  --success-contrast: hsla(0, 0%, 100%, 1);
+  --success-states-hover: hsla(123, 46%, 34%, 0.04);
+  --success-states-outlined-border: hsla(123, 46%, 34%, 0.5);
+}

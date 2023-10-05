@@ -74,10 +74,19 @@ export const Primary: Story = {
 };
 
 export const Variants: Story = {
+  args: {
+    label: "Label",
+    variant: "primary-alt",
+    loading: false,
+  },
   render: (args) =>
     html` <bp-button variant="text">${args.label}</bp-button>
-      <bp-button class="primary-alt">${args.label}</bp-button>
-      <bp-button class="primary-alt" outline>${args.label}</bp-button>`,
+      <bp-button class="${args.variant}" ?loading=${args.loading}
+        >${args.label}</bp-button
+      >
+      <bp-button class="${args.variant}" ?loading="${args.loading}" outline
+        >${args.label}</bp-button
+      >`,
 };
 
 export const Contained: Story = {

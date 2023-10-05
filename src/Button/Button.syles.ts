@@ -4,7 +4,6 @@ export default css`
   /* Primary button */
   :host {
     --md-ripple-pressed-color: #fff;
-    /* --md-ripple-hover-color: transparent; */
   }
   :host(.primary)::part(base) {
     background-color: var(--primary-black-main);
@@ -12,10 +11,10 @@ export default css`
     color: var(--primary-black-contrast);
   }
 
-  /* :host(.primary)::part(base):hover {
+  :host(.primary)::part(base):hover {
     background-color: var(--primary-black-dark);
     border-color: var(--primary-black-dark);
-  } */
+  }
 
   :host(.primary[outline])::part(base) {
     background-color: var(--primary-black-contrast);

@@ -2,15 +2,19 @@
 <html lang="en" class="sl-theme-light">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Lit + TS</title>
-    <link rel="stylesheet" href="./src/index.css" />
-    <script type="module" src="/src/my-element.ts"></script>
+    <link
+      rel="stylesheet"
+      href="node_modules/@shoelace-style/shoelace/dist/themes/light.css"
+    />
+    <link rel="stylesheet" href="./src/styles/sl-styles.css" />
   </head>
   <body>
-    <my-element>
-      <h1>Vite + Lit</h1>
-    </my-element>
+    <h1>Shoelace + Vite + Lit + TS</h1>
+    <bp-button class="primary"
+      ><sl-icon slot="prefix" name="gear"></sl-icon>Label</bp-button
+    >
+    <script type="module" src="/src/index.ts"></script>
   </body>
 </html>

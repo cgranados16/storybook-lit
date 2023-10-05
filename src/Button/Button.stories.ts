@@ -11,16 +11,13 @@ const variants = {
   success: "success",
 };
 /**
- *
  * #### `bp-button` | BpButton
  * Buttons let people take action and make choices with a single tap.
- *
- * The Button comes with three variants: Text, Contained and Outlined.
- *
  */
 const meta: Meta = {
   component: "BpButton",
   title: "Atoms/Button",
+  tags: ["autodocs"],
   args: {
     label: "Label",
     variant: "primary",
@@ -43,9 +40,6 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj;
 
-/**
- * Lorem Ipsum dolor sit amit
- */
 export const Primary: Story = {
   argTypes: {
     variant: {
@@ -73,6 +67,9 @@ export const Primary: Story = {
   },
 };
 
+/**
+ * The Button comes with three variants: **Text**, **Contained** and **Outlined**.
+ */
 export const Variants: Story = {
   args: {
     label: "Label",
@@ -89,6 +86,8 @@ export const Variants: Story = {
       >`,
 };
 
+/** Contained buttons are high-emphasis, distinguished by their use of
+ * elevation and fill. They contain actions that are primary to your app. */
 export const Contained: Story = {
   render: (args) => html`
     <bp-button class="primary">${args.label}</bp-button>
@@ -99,6 +98,7 @@ export const Contained: Story = {
   `,
 };
 
+/** Use the outline attribute to draw outlined buttons with transparent backgrounds. */
 export const Outlined: Story = {
   render: (args) => html`
     <bp-button class="primary" outline>${args.label}</bp-button>
@@ -109,15 +109,32 @@ export const Outlined: Story = {
   `,
 };
 
-export const Loading: Story = {
-  render: () => html`<bp-button variant="primary" loading>Loading</bp-button>`,
+/** Use the prefix and suffix slots to add icons.
+ * By default Shoelace uses Bootstrap icons, but we
+ * can also use custom icons or even Font Awesome icons. */
+export const Icons: Story = {
+  render: () => html`
+    <bp-button class="secondary">
+      <sl-icon slot="prefix" name="gear"></sl-icon>
+      Settings
+    </bp-button>
+    <bp-button variant="text" class="primary-alt">
+      Font Awesome Icon
+      <sl-icon
+        slot="suffix"
+        class="primary"
+        library="fa"
+        name="fas-font-awesome"
+      ></sl-icon>
+    </bp-button>
+    <bp-button variant="text" caret>Dropdown Menu</bp-button>
+  `,
 };
 
-export const Prefix: Story = {
-  render: () => html`
-  <bp-button variant="default" size="small">
-    <sl-icon slot="prefix" name="gear"></sl-icon>
-    Settings
-  </sl-button>
-  `,
+/** Use the loading attribute to make a button busy.
+ * The width will remain the same as before, preventing
+ * adjacent elements from moving around. Clicks will be
+ * suppressed until the loading state is removed. */
+export const Loading: Story = {
+  render: () => html`<bp-button variant="primary" loading>Loading</bp-button>`,
 };

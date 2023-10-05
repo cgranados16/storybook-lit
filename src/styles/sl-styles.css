@@ -1,7 +1,3 @@
-:not(:defined) {
-  visibility: hidden;
-}
-
 :root,
 :host,
 .sl-theme-light {
@@ -46,4 +42,10 @@
   --success-contrast: hsla(0, 0%, 100%, 1);
   --success-states-hover: hsla(123, 46%, 34%, 0.04);
   --success-states-outlined-border: hsla(123, 46%, 34%, 0.5);
+
+  --md-ripple-pressed-color: #fff;
+
+  :not(:defined) {
+    visibility: hidden;
+  }
 }

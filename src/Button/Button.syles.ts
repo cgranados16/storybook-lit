@@ -1,10 +1,16 @@
 import { css } from "lit";
 
 export default css`
-  /* Primary button */
-  :host {
-    --md-ripple-pressed-color: #fff;
+  /* default styles */
+  :host([variant="default"])::part(base) {
+    box-shadow: var(--sl-shadow-large);
   }
+
+  :host([variant="default"])::part(base):hover {
+    box-shadow: var(--sl-shadow-x-large);
+  }
+
+  /* Primary button */
   :host(.primary)::part(base) {
     background-color: var(--primary-black-main);
     border-color: var(--primary-black-main);
@@ -12,8 +18,10 @@ export default css`
   }
 
   :host(.primary)::part(base):hover {
-    background-color: var(--primary-black-dark);
-    border-color: var(--primary-black-dark);
+    background:
+      linear-gradient(to left, #8736c1, #ff4722) padding-box,
+      linear-gradient(to left, #8736c1, #ff4722) border-box;
+    border: 1px solid transparent;
   }
 
   :host(.primary[outline])::part(base) {
@@ -24,6 +32,7 @@ export default css`
   }
 
   :host(.primary[outline])::part(base):hover {
+    background: unset;
     background-color: var(--primary-black-states-hover);
   }
 
@@ -120,11 +129,29 @@ export default css`
   }
 
   /* Text button */
+  :host([variant="text"])::part(label) {
+    text-decoration: underline;
+  }
+
   :host([variant="text"])::part(base) {
+    background: unset;
+    border: unset;
+    color: unset;
+    --md-ripple-pressed-color: var(--primary-black-main);
+  }
+
+  :host([variant="text"])::part(base):hover {
+    background-color: var(--primary-black-contrast);
+    --md-ripple-pressed-color: var(--primary-black-main);
+  }
+
+  :host(.primary-alt[variant="text"])::part(base) {
     color: var(--primary-main);
     --md-ripple-pressed-color: var(--primary-main);
   }
-  :host([variant="text"])::part(label) {
-    text-decoration: underline;
+
+  :host(.primary-alt[variant="text"])::part(base):hover {
+    background-color: var(--primary-contrast);
+    --md-ripple-pressed-color: var(--primary-main);
   }
 `;

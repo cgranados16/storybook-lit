@@ -3,7 +3,7 @@ import "@fontsource/lato";
 import "@shoelace-style/shoelace/dist/themes/light.css";
 import "../src/styles/sl-styles.css";
 import { setBasePath } from "@shoelace-style/shoelace/dist/utilities/base-path.js";
-setBasePath("/");
+setBasePath("dist/shoelace");
 
 import { registerIconLibrary } from "@shoelace-style/shoelace/dist/utilities/icon-library.js";
 

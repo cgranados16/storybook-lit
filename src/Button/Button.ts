@@ -1,6 +1,6 @@
 import { CSSResultGroup } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import SlButton from "@shoelace-style/shoelace/dist/components/button/button";
+import SlButton from "@shoelace-style/shoelace/dist/components/button/button.component.js";
 import "@material/web/ripple/ripple.js";
 import styles from "./Button.syles";
 

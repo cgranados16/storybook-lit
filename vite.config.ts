@@ -1,3 +1,4 @@
+import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
@@ -5,6 +6,12 @@ const iconsPath = './node_modules/@shoelace-style/shoelace/dist/assets/icons';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    lib: {
+      entry: resolve(__dirname, 'src/index.ts'),
+      formats: ['es']
+    }
+  },
   plugins: [
     viteStaticCopy({
       targets: [

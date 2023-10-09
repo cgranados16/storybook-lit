@@ -1,4 +1,6 @@
 import "@fontsource/lato";
 import { setBasePath } from "@shoelace-style/shoelace/dist/utilities/base-path.js";
-setBasePath("/");
-import "./Button/Button";
+import "@shoelace-style/shoelace/dist/themes/light.styles";
+setBasePath("dist/shoelace");
+import { BpButton } from "./Button/Button";
+export { BpButton };

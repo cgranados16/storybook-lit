@@ -136,5 +136,9 @@ export const Icons: Story = {
  * adjacent elements from moving around. Clicks will be
  * suppressed until the loading state is removed. */
 export const Loading: Story = {
+  parameters: {
+    // Notifies Chromatic to pause the animations when they finish for the specific story.
+    chromatic: { pauseAnimationAtEnd: true },
+  },
   render: () => html`<bp-button variant="primary" loading>Loading</bp-button>`,
 };

@@ -1,5 +1,5 @@
 {
-  "name": "storybook-lit",
+  "name": "@cgranados/storybook-lit",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -48,6 +48,19 @@
     "vite-plugin-static-copy": "^0.17.0",
     "vite-plugin-turbosnap": "^1.0.3"
   },
-  "readme": "ERROR: No README data found!",
-  "_id": "storybook-lit@0.0.0"
+  "description": "Web Component Library using Lit",
+  "main": "src/index.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cgranados16/storybook-lit.git"
+  },
+  "keywords": [
+    "lit"
+  ],
+  "author": "cgranados16",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cgranados16/storybook-lit/issues"
+  },
+  "homepage": "https://github.com/cgranados16/storybook-lit#readme"
 }

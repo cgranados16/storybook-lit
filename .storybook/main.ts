@@ -18,16 +18,11 @@ const config: StorybookConfig = {
   },
   async viteFinal(config, { configType }) {
     // customize the Vite config here
-    config.optimizeDeps.include = [
-      ...(config.optimizeDeps?.include ?? []),
-      "@storybook/web-components",
-    ];
-    config.optimizeDeps.exclude = [
-      ...(config.optimizeDeps?.exclude ?? []),
-      "lit",
-      "lit-html",
-    ];
     return mergeConfig(config, {
+      optimizeDeps: {
+        include: ["@storybook/web-components"],
+        exclude: ["lit", "lit-html"],
+      },
       plugins:
         configType === "PRODUCTION"
           ? [

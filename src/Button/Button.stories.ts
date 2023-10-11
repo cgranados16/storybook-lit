@@ -12,7 +12,6 @@ export interface StoryKnobs {
 
 const meta = {
   title: "Atoms/Button",
-  tags: ["autodocs"],
   component: "bp-filled-button",
   argTypes: {
     label: {
@@ -99,7 +98,7 @@ export const Filled: Story = {
   },
 };
 
-export const outlined: Story = {
+export const Outlined: Story = {
   name: "Outlined Button",
   render({ label, disabled }) {
     return html`
@@ -122,7 +121,7 @@ export const outlined: Story = {
   },
 };
 
-export const text: Story = {
+export const Text: Story = {
   name: "Text Button",
   render({ label, disabled }) {
     return html`

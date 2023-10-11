@@ -1,0 +1,159 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/Button/Button.stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "meta",
+          "type": {
+            "text": "Meta<StoryKnobs>"
+          },
+          "default": "{\n  title: \"Atoms/Button\",\n  tags: [\"autodocs\"],\n  component: \"FilledButton\",\n  // argTypes: {\n  //   variant: {\n  //     options: [\"primary\", \"secondary\"],\n  //     control: { type: \"radio\" },\n  //   },\n  // },\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "buttons",
+          "type": {
+            "text": "Story<StoryKnobs>"
+          },
+          "default": "{\n  name: \"Filled Button\",\n  render({ label, disabled }) {\n    return html`\n      <div class=\"row\">\n        <bp-filled-button ?disabled=${disabled}>\n          ${label || \"Primary\"}\n        </bp-filled-button>\n        <bp-filled-button class=\"primary-alt\" ?disabled=${disabled}>\n          ${label || \"Primary Alt\"}\n        </bp-filled-button>\n        <bp-filled-button class=\"secondary\" ?disabled=${disabled}>\n          ${label || \"Secondary\"}\n        </bp-filled-button>\n        <bp-filled-button class=\"error\" ?disabled=${disabled}>\n          ${label || \"Error\"}\n        </bp-filled-button>\n        <bp-filled-button class=\"success\" ?disabled=${disabled}>\n          ${label || \"Success\"}\n        </bp-filled-button>\n      </div>\n    `;\n  },\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "outlined",
+          "type": {
+            "text": "Story"
+          },
+          "default": "{\n  name: \"Outlined Button\",\n  render({ label, disabled }) {\n    return html`\n      <div class=\"row\">\n        <bp-outlined-button ?disabled=${disabled}>\n          ${label || \"Primary\"}\n        </bp-outlined-button>\n        <bp-outlined-button class=\"primary-alt\" ?disabled=${disabled}>\n          ${label || \"Primary Alt\"}\n        </bp-outlined-button>\n        <bp-outlined-button class=\"secondary\" ?disabled=${disabled}>\n          ${label || \"Secondary\"}\n        </bp-outlined-button>\n        <bp-outlined-button class=\"error\" ?disabled=${disabled}>\n          ${label || \"Error\"}\n        </bp-outlined-button>\n        <bp-outlined-button class=\"success\" ?disabled=${disabled}>\n          ${label || \"Success\"}\n        </bp-outlined-button>\n      </div>\n    `;\n  },\n}"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "meta",
+            "module": "src/Button/Button.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "buttons",
+          "declaration": {
+            "name": "buttons",
+            "module": "src/Button/Button.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "outlined",
+          "declaration": {
+            "name": "outlined",
+            "module": "src/Button/Button.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/Button/FilledButton.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "FilledButton",
+          "members": [
+            {
+              "kind": "field",
+              "name": "styles",
+              "type": {
+                "text": "CSSResultGroup"
+              },
+              "static": true,
+              "default": "[\n    sharedStyles,\n    sharedElevationStyles,\n    filledStyles,\n    css`\n      :host,\n      :host(.primary) {\n        --md-filled-button-container-color: #212121;\n      }\n      :host(.secondary) {\n        --md-filled-button-container-color: var(--md-sys-color-secondary);\n        --md-filled-button-label-text-color: var(--md-sys-color-on-secondary);\n      }\n      :host(.primary-alt) {\n        --md-filled-button-container-color: var(--md-sys-color-primary);\n        --md-filled-button-label-text-color: var(--md-sys-color-on-primary);\n      }\n      :host(.error) {\n        --md-filled-button-container-color: var(--md-sys-color-error-container);\n      }\n      :host(.success) {\n        --md-filled-button-container-color: var(--md-custom-color-success);\n      }\n    `,\n  ]"
+            }
+          ],
+          "superclass": {
+            "name": "MdFilledButton",
+            "package": "@material/web/button/internal/filled-button"
+          },
+          "summary": "Buttons help people take action, such as sending an email, sharing a\ndocument, or liking a comment."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "FilledButton",
+          "declaration": {
+            "name": "FilledButton",
+            "module": "src/Button/FilledButton.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/Button/OutlinedButton.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OutlinedButton",
+          "members": [
+            {
+              "kind": "field",
+              "name": "styles",
+              "type": {
+                "text": "CSSResultGroup"
+              },
+              "static": true,
+              "default": "[\n    sharedStyles,\n    sharedElevationStyles,\n    outlinedStyles,\n    css`\n      :host,\n      :host(.primary) {\n        --md-outlined-button-outline-color: #212121;\n        --md-outlined-button-label-text-color: #212121;\n        --md-outlined-button-hover-label-text-color: var(\n          --md-outlined-button-label-text-color\n        );\n        --md-outlined-button-pressed-label-text-color: var(\n          --md-outlined-button-label-text-color\n        );\n        --md-outlined-button-hover-state-layer-color: var(\n          --md-outlined-button-label-text-color\n        );\n        --md-outlined-button-focus-label-text-color: var(\n          --md-outlined-button-label-text-color\n        );\n        --md-outlined-button-pressed-outline-color: var(\n          --md-outlined-button-outline-color\n        );\n        --md-outlined-button-pressed-state-layer-color: var(\n          --md-outlined-button-outline-color\n        );\n      }\n      :host(.secondary) {\n        --md-outlined-button-outline-color: var(--md-sys-color-secondary);\n        --md-outlined-button-label-text-color: var(--md-sys-color-secondary);\n      }\n      :host(.primary-alt) {\n        --md-outlined-button-outline-color: var(--md-sys-color-outline);\n        --md-outlined-button-label-text-color: var(--md-sys-color-primary);\n      }\n      :host(.error) {\n        --md-outlined-button-outline-color: var(--md-sys-color-error-container);\n        --md-outlined-button-label-text-color: var(\n          --md-sys-color-error-container\n        );\n      }\n      :host(.success) {\n        --md-outlined-button-outline-color: var(--md-custom-color-success);\n        --md-outlined-button-label-text-color: var(--md-custom-color-success);\n      }\n    `,\n  ]"
+            }
+          ],
+          "superclass": {
+            "name": "MdOutlinedButton",
+            "package": "@material/web/button/internal/outlined-button.js"
+          },
+          "summary": "Buttons help people take action, such as sending an email, sharing a\ndocument, or liking a comment."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OutlinedButton",
+          "declaration": {
+            "name": "OutlinedButton",
+            "module": "src/Button/OutlinedButton.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/Button/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "\"./FilledButton\""
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "\"./OutlinedButton\""
+          }
+        }
+      ]
+    }
+  ]
+}

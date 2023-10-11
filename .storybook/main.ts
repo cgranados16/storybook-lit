@@ -4,7 +4,11 @@ import { mergeConfig } from "vite";
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
-  addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
+  addons: [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "@storybook/addon-controls",
+  ],
   framework: {
     name: "@storybook/web-components-vite",
     options: {},
@@ -13,6 +17,16 @@ const config: StorybookConfig = {
     autodocs: "tag",
   },
   async viteFinal(config, { configType }) {
+    // customize the Vite config here
+    config.optimizeDeps.include = [
+      ...(config.optimizeDeps?.include ?? []),
+      "@storybook/web-components",
+    ];
+    config.optimizeDeps.exclude = [
+      ...(config.optimizeDeps?.exclude ?? []),
+      "lit",
+      "lit-html",
+    ];
     return mergeConfig(config, {
       plugins:
         configType === "PRODUCTION"

@@ -1,0 +1,165 @@
+@use "@material/web/tokens";
+@use "@material/web/typography/typeface";
+@use "@material/web/typography/typescale";
+$mobile-breakpoint: 414px;
+$tablet-breakpoint: 834px;
+:root {
+  @include typeface.theme(
+    $tokens: (
+      "brand": Lato,
+      "plain": Lato,
+      "weight-bold": 400,
+    )
+  );
+
+  @include typescale.theme(
+    $tokens: (
+      // Display Large
+      "display-large-font": var(--md-ref-typeface-brand),
+      "display-large-size": 3.5625rem,
+      "display-large-weight": 400,
+      "display-large-line-height": 4rem,
+
+      // Display Medium
+      "display-medium-font": var(--md-ref-typeface-brand),
+      "display-medium-size": 2.8125rem,
+      "display-medium-weight": 400,
+      "display-medium-line-height": 3.25rem,
+
+      // Display Small
+      "display-small-font": var(--md-ref-typeface-brand),
+      "display-small-size": 2.25rem,
+      "display-small-weight": 400,
+      "display-small-line-height": 2.75rem,
+
+      // Headline Large
+      "headline-large-font": var(--md-ref-typeface-brand),
+      "headline-large-size": 2rem,
+      "headline-large-weight": 400,
+      "headline-large-line-height": 2.5rem,
+
+      // Headline Medium
+      "headline-medium-font": var(--md-ref-typeface-brand),
+      "headline-medium-size": 1.75rem,
+      "headline-medium-weight": 400,
+      "headline-medium-line-height": 2.25rem,
+
+      // Headline Small
+      "headline-small-font": var(--md-ref-typeface-brand),
+      "headline-small-size": 1.5rem,
+      "headline-small-weight": 400,
+      "headline-small-line-height": 2rem,
+
+      // Title Large
+      "title-large-font": var(--md-ref-typeface-brand),
+      "title-large-size": 1.375rem,
+      "title-large-weight": 400,
+      "title-large-line-height": 1.75rem,
+
+      // Title Medium
+      "title-medium-font": var(--md-ref-typeface-brand),
+      "title-medium-size": 1rem,
+      "title-medium-weight": 500,
+      "title-medium-line-height": 1.5rem,
+
+      // Title Small
+      "title-small-font": var(--md-ref-typeface-brand),
+      "title-small-size": 0.875rem,
+      "title-small-weight": 500,
+      "title-small-line-height": 1.25rem,
+
+      // Label Large
+      "label-large-font": var(--md-ref-typeface-plain),
+      "label-large-size": 0.875rem,
+      "label-large-weight": 500,
+      "label-large-line-height": 1.25rem,
+
+      // Label Medium
+      "label-medium-font": var(--md-ref-typeface-plain),
+      "label-medium-size": 0.75rem,
+      "label-medium-weight": 500,
+      "label-medium-line-height": 1rem,
+
+      // Label Small
+      "label-small-font": var(--md-ref-typeface-plain),
+      "label-small-size": 0.6875rem,
+      "label-small-weight": 500,
+      "label-small-line-height": 1rem,
+
+      // Body Large
+      "body-large-font": var(--md-ref-typeface-plain),
+      "body-large-size": 1rem,
+      "body-large-weight": 400,
+      "body-large-line-height": 1.5rem,
+
+      // Body Medium
+      "body-medium-font": var(--md-ref-typeface-plain),
+      "body-medium-size": 0.875rem,
+      "body-medium-weight": 400,
+      "body-medium-line-height": 1.25rem,
+
+      // Body Small
+      "body-small-font": var(--md-ref-typeface-plain),
+      "body-small-size": 0.75rem,
+      "body-small-weight": 400,
+      "body-small-line-height": 1rem,
+    )
+  );
+}
+
+@mixin typography($type) {
+  font-family: var(--md-sys-typescale-#{$type}-font);
+  font-size: var(--md-sys-typescale-#{$type}-size);
+  font-weight: var(--md-sys-typescale-#{$type}-weight);
+  line-height: var(--md-sys-typescale-#{$type}-height);
+}
+
+.display {
+  @include typography(display-large);
+  @media only screen and (max-width: $tablet-breakpoint) {
+    @include typography(display-medium);
+  }
+  @media only screen and (max-width: $mobile-breakpoint) {
+    @include typography(display-small);
+  }
+}
+
+.headline {
+  @include typography(headline-large);
+  @media only screen and (max-width: $tablet-breakpoint) {
+    @include typography(headline-medium);
+  }
+  @media only screen and (max-width: $mobile-breakpoint) {
+    @include typography(headline-small);
+  }
+}
+
+.bp-title {
+  @include typography(title-large);
+  @media only screen and (max-width: $tablet-breakpoint) {
+    @include typography(title-medium);
+  }
+  @media only screen and (max-width: $mobile-breakpoint) {
+    @include typography(title-small);
+  }
+}
+
+.label {
+  @include typography(label-large);
+  @media only screen and (max-width: $tablet-breakpoint) {
+    @include typography(label-medium);
+  }
+  @media only screen and (max-width: $mobile-breakpoint) {
+    @include typography(label-small);
+  }
+}
+
+.body {
+  @include typography(body-large);
+  @media only screen and (max-width: $tablet-breakpoint) {
+    @include typography(body-medium);
+  }
+  @media only screen and (max-width: $mobile-breakpoint) {
+    @include typography(body-small);
+  }
+}

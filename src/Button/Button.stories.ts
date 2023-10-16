@@ -8,6 +8,8 @@ import { choose } from "lit/directives/choose.js";
 export interface StoryKnobs {
   label: string;
   disabled: boolean;
+  variant: "filled" | "outlined" | "text";
+  color: "primary" | "primary-alt" | "secondary" | "error" | "success";
 }
 
 const meta = {
@@ -30,30 +32,62 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   name: "Playground",
-  args: {
-    variant: "filled",
-  },
   argTypes: {
+    label: {
+      control: "text",
+      description: "The text inside the button.",
+      table: { type: { summary: "string" } },
+    },
     variant: {
-      options: ["filled", "outlined"],
-      control: { type: "radio" },
+      control: "radio",
+      options: ["filled", "outlined", "text"],
+      description: "The variant to use.",
+      table: { type: { summary: "filled | outlined | text" } },
+    },
+    color: {
+      options: ["primary", "primary-alt", "secondary", "error", "success"],
+      control: { type: "select" },
+      description: "The color of the component.",
+      table: {
+        type: {
+          detail: "primary | primary-alt | secondary | error | success",
+          summary: "Colors",
+        },
+      },
+    },
+    disabled: {
+      control: "boolean",
+      description: "If `true`, the component is disabled.",
+      type: "boolean",
+      table: { type: { summary: "boolean" } },
     },
   },
-  render({ label, disabled, variant }) {
+  args: {
+    variant: "filled",
+    color: "primary",
+  },
+  render({ label, disabled, variant, color }) {
     return html`
       ${choose(variant, [
         [
           "filled",
           () =>
-            html`<bp-filled-button ?disabled=${disabled}
-              >${label || "Filled"}</bp-filled-button
+            html`<bp-filled-button class=${color} ?disabled=${disabled}
+              >${label || "Filled Button"}</bp-filled-button
             >`,
         ],
         [
           "outlined",
           () =>
-            html`<bp-outlined-button ?disabled=${disabled}
-              >${label || "Outlined"}</bp-outlined-button
+            html`<bp-outlined-button class=${color} ?disabled=${disabled}
+              >${label || "Outlined Button"}</bp-outlined-button
+            >`,
+        ],
+        [
+          "text",
+          () =>
+            html`<bp-text-button class=${color} ?disabled=${disabled}
+              >${label || "Text Button"}</bp-text-button
             >`,
         ],
       ])}

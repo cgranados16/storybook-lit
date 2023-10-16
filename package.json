@@ -1,7 +1,7 @@
 {
-  "name": "storybook-lit",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@cgranados/material-web-library",
+  "private": false,
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -46,8 +46,27 @@
     "storybook": "^7.4.6",
     "typescript": "^5.0.2",
     "vite": "^4.4.11",
+    "vite-plugin-dts": "^3.6.0",
     "vite-plugin-turbosnap": "^1.0.3"
   },
-  "readme": "ERROR: No README data found!",
-  "_id": "storybook-lit@0.0.0"
+  "description": "Web Component Library using Material Design + Lit",
+  "main": "src/index.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cgranados16/storybook-lit.git"
+  },
+  "keywords": [
+    "material-design",
+    "lit",
+    "web-components"
+  ],
+  "author": "@cgranados16",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cgranados16/storybook-lit/issues"
+  },
+  "homepage": "https://github.com/cgranados16/storybook-lit#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
 }

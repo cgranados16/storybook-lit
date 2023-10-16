@@ -1,0 +1,15 @@
+@use "@fontsource/lato";
+@use "typography";
+@use "colors";
+
+/** Storybook columns */
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+}

@@ -1,6 +1,5 @@
 import type { Preview } from "@storybook/web-components";
-import "@fontsource/lato";
-import "../src/styles.scss";
+import "../src/styles/index.scss";
 import { setCustomElementsManifest } from "@storybook/web-components";
 import customElements from "../custom-elements.json";
 setCustomElementsManifest(customElements);

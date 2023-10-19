@@ -1,5 +1,5 @@
 import type { Preview } from "@storybook/web-components";
-import "../src/styles/index.scss";
+import "@/styles/index.scss";
 import { setCustomElementsManifest } from "@storybook/web-components";
 import customElements from "../custom-elements.json";
 setCustomElementsManifest(customElements);

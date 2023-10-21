@@ -2,7 +2,7 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import { fileURLToPath } from 'url';
-import { libInjectCss } from 'vite-plugin-lib-inject-css'
+import { libInjectCss, scanEntries } from 'vite-plugin-lib-inject-css'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -44,7 +44,15 @@ export default defineConfig({
     sourcemap: true
   },
   plugins: [
-    libInjectCss(),
+    libInjectCss({
+      format: ['es'],
+      entry: {
+        index: 'src/index.ts',
+        ...scanEntries([
+          'src',
+        ])
+      },
+    }),
     dts({ include: ['src'] }),
   ],
 });

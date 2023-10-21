@@ -81,9 +81,6 @@
     "url": "https://github.com/cgranados16/storybook-lit/issues"
   },
   "homepage": "https://github.com/cgranados16/storybook-lit#readme",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
   "sideEffects": [
     "src/styles/*.css"
   ]

@@ -1,0 +1,24 @@
+@use "@material/web/color/color";
+:root {
+  @include color.light-theme;
+  //   @include color.theme(
+  //     $tokens: (
+  //       primary: hsla(10, 100%, 57%, 1),
+  //       secondary: rgb(134, 54, 191),
+  //       secondary-container: hsla(275, 56%, 48%, 0.04),
+  //       error-container: hsla(0, 65%, 51%, 1),
+  //     )
+  //   );
+  --md-sys-color-primary: hsla(10, 100%, 57%, 1);
+  --md-sys-color-outline: hsla(10, 100%, 57%, 0.5);
+
+  --md-sys-color-secondary: rgb(134, 54, 191);
+  --md-sys-color-secondary-outline: hsla(275, 56%, 48%, 0.5);
+  --md-sys-color-secondary-container: hsla(275, 56%, 48%, 0.04);
+
+  --md-sys-color-error-container: hsla(0, 65%, 51%, 1);
+  --md-sys-color-error-outline: hsla(0, 65%, 51%, 0.5);
+
+  --md-custom-color-success: hsl(123, 46%, 34%);
+  --md-custom-color-success-outline: hsla(123, 46%, 34%, 0.5);
+}

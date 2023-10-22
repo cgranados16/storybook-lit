@@ -1,13 +1,13 @@
 {
-  "name": "storybook-lit",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@cgranados/material-web-library",
+  "private": false,
+  "version": "0.0.4",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006 && cem analyze --litelement --watch",
     "build-storybook": "storybook build",
     "prepare": "husky install",
     "chromatic": "npx chromatic --exit-zero-on-changes"
@@ -18,30 +18,70 @@
     "*.{js,css,md}": "prettier --write"
   },
   "dependencies": {
-    "lit": "^2.7.6"
+    "@fontsource/lato": "^5.0.15",
+    "@material/web": "^1.0.0",
+    "lit": "^2.8.0"
   },
   "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.8.4",
+    "@storybook/addon-controls": "^7.5.1",
     "@storybook/addon-essentials": "^7.5.1",
     "@storybook/addon-links": "^7.5.1",
     "@storybook/blocks": "^7.5.1",
     "@storybook/web-components": "^7.5.1",
     "@storybook/web-components-vite": "^7.5.1",
-    "@typescript-eslint/eslint-plugin": "^6.7.4",
-    "@typescript-eslint/parser": "^6.7.4",
-    "chromatic": "^7.2.0",
-    "eslint": "^8.50.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "@typescript-eslint/parser": "^6.7.5",
+    "chromatic": "^7.3.0",
+    "eslint": "^8.51.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-lit": "^1.9.1",
+    "eslint-plugin-storybook": "^0.6.15",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
     "prettier": "3.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "sass": "^1.69.2",
     "storybook": "^7.5.1",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5",
+    "vite": "^4.4.11",
+    "vite-plugin-dts": "^3.6.0",
+    "vite-plugin-lib-inject-css": "^1.3.0",
     "vite-plugin-turbosnap": "^1.0.3"
   },
-  "readme": "ERROR: No README data found!",
-  "_id": "storybook-lit@0.0.0"
+  "description": "Web Component Library using Material Design + Lit",
+  "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    },
+    "./styles": {
+      "import": "./dist/style.css"
+    }
+  },
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/*",
+    "dist/style.css",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cgranados16/storybook-lit.git"
+  },
+  "keywords": [
+    "material-design",
+    "lit",
+    "web-components"
+  ],
+  "author": "@cgranados16",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cgranados16/storybook-lit/issues"
+  },
+  "homepage": "https://github.com/cgranados16/storybook-lit#readme",
+  "sideEffects": [
+    "src/styles/*.css"
+  ]
 }

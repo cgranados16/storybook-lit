@@ -13,7 +13,12 @@ const config: StorybookConfig = {
     autodocs: "tag",
   },
   async viteFinal(config, { configType }) {
+    // customize the Vite config here
     return mergeConfig(config, {
+      optimizeDeps: {
+        include: ["@storybook/web-components"],
+        exclude: ["lit", "lit-html"],
+      },
       plugins:
         configType === "PRODUCTION"
           ? [
